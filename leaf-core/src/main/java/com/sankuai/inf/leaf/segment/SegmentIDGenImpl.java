@@ -90,6 +90,7 @@ public class SegmentIDGenImpl implements IDGen {
         try {
             List<String> dbTags = dao.getAllTags();
             if (dbTags == null || dbTags.isEmpty()) {
+                cache.clear();
                 return;
             }
             List<String> cacheTags = new ArrayList<String>(cache.keySet());
